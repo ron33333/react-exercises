@@ -1,0 +1,13 @@
+.President {
+  text-align: center;
+}
+
+.President p {
+  margin-top: 0;
+}
+
+.President .president-list img {
+  width: 60px;
+  margin: 10px;
+  border-radius: 5px;
+}

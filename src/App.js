@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.scss';
+import './App.css';
 import Blob from './Blob/Blob';
 import Hide from './Hide/Hide';
 import List from './List/List';

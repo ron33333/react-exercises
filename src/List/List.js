@@ -1,31 +1,25 @@
-import React, { Component } from 'react';
-import './List.scss';
+import React, {useState} from 'react';
+import './List.css';
 
-class List extends Component {
+function List() {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			items: [
-				'First item',
-				'Second item',
-				'Third item',
-				'Fourth item'
-			]
-		};
-	}
+	// eslint-disable-next-line no-unused-vars
+	const [items, setItems] = useState([
+		'First item',
+		'Second item',
+		'Third item',
+		'Fourth item'
+	]);
 
-	render() {
-		return (
-			<div className="List">
-				<h3>List:</h3>
-				<p>Display a bullet point list of all the `items` in the state.</p>
-				<ul>
+	return (
+		<div className="List">
+			<h3>List:</h3>
+			<p>Display a bullet point list of all the `items` in the state.</p>
+			<ul>
 
-				</ul>
-			</div>
-		)
-	}
+			</ul>
+		</div>
+	);
 }
 
 export default List;

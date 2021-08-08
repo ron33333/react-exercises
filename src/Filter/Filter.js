@@ -1,34 +1,27 @@
-import React, { Component } from 'react';
-import './Filter.scss';
+import React, {useState} from 'react';
+import './Filter.css';
 
-class Filter extends Component {
+function Filter() {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			items: [
-				'Big fox',
-				'Small elephant',
-				'Big ant',
-				'Small dinosaur',
-				'Medium dog'
-			]
-		};
-	}
+	const [items] = useState([
+		'Big fox',
+		'Small elephant',
+		'Big ant',
+		'Small dinosaur',
+		'Medium dog'
+	]);
 
-	render() {
-		return (
-			<div className="Filter">
-				<p>Filter the list as you type.</p>
-				<input placeholder="Search..." className="Filter__textbox" />
-				<ul>
-					{this.state.items.map((item, index) => {
-						return <li key={index}>{item}</li>;
-					})}
-				</ul>
-			</div>
-		)
-	}
+	return (
+		<div className="Filter">
+			<p>Filter the list as you type.</p>
+			<input placeholder="Search..." className="Filter__textbox" />
+			<ul>
+				{items.map((item, index) => {
+					return <li key={index}>{item}</li>;
+				})}
+			</ul>
+		</div>
+	)
 }
 
 export default Filter;

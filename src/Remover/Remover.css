@@ -1,0 +1,8 @@
+.Remover h3 {
+  margin: 0;
+}
+
+.Remover__list li {
+  color: #555555;
+  line-height: 1.5em;
+}
