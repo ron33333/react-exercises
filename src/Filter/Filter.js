@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './Filter.css';
 
 function Filter() {
-
 	const [items] = useState([
 		'Big fox',
 		'Small elephant',
@@ -10,15 +9,21 @@ function Filter() {
 		'Small dinosaur',
 		'Medium dog'
 	]);
+	const [filteredItems, setFilteredItems] = useState(items);
+
+	const filterItems = (e) => {
+		const searchTerm = new RegExp(e.target.value, "gi")
+		setFilteredItems(items.filter(item => item.match(searchTerm)));
+	}
 
 	return (
 		<div className="Filter">
 			<p>Filter the list as you type.</p>
-			<input placeholder="Search..." className="Filter__textbox" />
+			<input placeholder="Search..." className="Filter__textbox" onChange={filterItems} />
 			<ul>
-				{items.map((item, index) => {
+				{filteredItems.length > 0 ? filteredItems.map((item, index) => {
 					return <li key={index}>{item}</li>;
-				})}
+				}) : <li className="Filter__no_results">No results found!</li>}
 			</ul>
 		</div>
 	)

@@ -16,7 +16,7 @@ function List() {
 			<h3>List:</h3>
 			<p>Display a bullet point list of all the `items` in the state.</p>
 			<ul>
-
+					{items.map((item, i) => <li key={i}>{item}</li>)}
 			</ul>
 		</div>
 	);
